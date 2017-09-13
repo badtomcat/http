@@ -1,0 +1,27 @@
+{
+    "name": "tian/http",
+    "type": "library",
+    "description": "Tian HttpFoundation Component",
+    "keywords": [],
+    "homepage": "https://github.com/aweitian/http",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "awei.tian",
+            "email": "awei.tian@qq.com"
+        }
+    ],
+    "require": {
+        "php": "^5.4"
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+        "psr-4": { "Tian\\Http\\": "src\\" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "minimum-stability": "dev"
+}
