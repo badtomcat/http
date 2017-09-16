@@ -50,13 +50,6 @@ class Request
     const METHOD_CONNECT = 'CONNECT';
 
     /**
-     * The original content of the response.
-     *
-     * @var mixed
-     */
-    public $original;
-
-    /**
      * @var string[]
      */
     protected static $trustedProxies = array();
@@ -2035,13 +2028,4 @@ class Request
         return $content instanceof JsonableInterface or is_array($content);
     }
 
-    /**
-     * Get the original response content.
-     *
-     * @return mixed
-     */
-    public function getOriginalContent()
-    {
-        return $this->original;
-    }
 }
