@@ -537,22 +537,6 @@ class Request
     }
 
     /**
-     * Sets a list of trusted proxies.
-     *
-     * You should only list the reverse proxies that you manage directly.
-     *
-     * @param array $proxies          A list of trusted proxies
-     * @param int   $trustedHeaderSet A bit field of Request::HEADER_*, to set which headers to trust from your proxies
-     *
-     * @throws \InvalidArgumentException When $trustedHeaderSet is invalid
-     */
-    public static function setTrustedProxies(array $proxies, int $trustedHeaderSet)
-    {
-        self::$trustedProxies = $proxies;
-        self::$trustedHeaderSet = $trustedHeaderSet;
-    }
-
-    /**
      * Gets the list of trusted proxies.
      *
      * @return array An array of trusted proxies
@@ -1125,15 +1109,15 @@ class Request
         return $host;
     }
 
-    /**
-     * Sets the request method.
-     *
-     * @param string $method
+    /***
+     * @param $method
+     * @return $this
      */
     public function setMethod($method)
     {
         $this->method = null;
         $this->server->set('REQUEST_METHOD', $method);
+        return $this;
     }
 
     /**
@@ -1238,13 +1222,13 @@ class Request
                 return $format;
             }
         }
+        return null;
     }
 
     /**
-     * Associates a format with mime types.
-     *
-     * @param string       $format    The format
-     * @param string|array $mimeTypes The associated mime types (the preferred one must be the first as it will be used as the content type)
+     * @param $format
+     * @param $mimeTypes
+     * @return $this
      */
     public function setFormat($format, $mimeTypes)
     {
@@ -1253,6 +1237,7 @@ class Request
         }
 
         static::$formats[$format] = is_array($mimeTypes) ? $mimeTypes : array($mimeTypes);
+        return $this;
     }
 
     /**
@@ -1281,10 +1266,12 @@ class Request
      * Sets the request format.
      *
      * @param string $format The request format
+     * @return $this
      */
     public function setRequestFormat($format)
     {
         $this->format = $format;
+        return $this;
     }
 
     /**
@@ -1301,6 +1288,7 @@ class Request
      * Sets the default locale.
      *
      * @param string $locale
+     * @return $this
      */
     public function setDefaultLocale($locale)
     {
@@ -1309,6 +1297,7 @@ class Request
         if (null === $this->locale) {
             $this->setPhpDefaultLocale($locale);
         }
+        return $this;
     }
 
     /**
@@ -1325,10 +1314,12 @@ class Request
      * Sets the locale.
      *
      * @param string $locale
+     * @return $this
      */
     public function setLocale($locale)
     {
         $this->setPhpDefaultLocale($this->locale = $locale);
+        return $this;
     }
 
     /**
@@ -1944,64 +1935,6 @@ class Request
 
         // Now the IP chain contains only untrusted proxies and the client IP
         return $clientIps ? array_reverse($clientIps) : array($firstTrustedIp);
-    }
-    /**
-     * Set a header on the Response.
-     *
-     * @param  string  $key
-     * @param  string  $value
-     * @param  bool    $replace
-     * @return \Illuminate\Http\Response
-     */
-    public function header($key, $value, $replace = true)
-    {
-        $this->headers->set($key, $value, $replace);
-
-        return $this;
-    }
-
-    /**
-     * Add a cookie to the response.
-     *
-     * @param  \Symfony\Component\HttpFoundation\Cookie  $cookie
-     * @return \Illuminate\Http\Response
-     */
-    public function withCookie(Cookie $cookie)
-    {
-        $this->headers->setCookie($cookie);
-
-        return $this;
-    }
-
-    /**
-     * Set the content on the response.
-     *
-     * @param  mixed  $content
-     * @return void
-     */
-    public function setContent($content)
-    {
-        $this->original = $content;
-
-        // If the content is "JSONable" we will set the appropriate header and convert
-        // the content to JSON. This is useful when returning something like models
-        // from routes that will be automatically transformed to their JSON form.
-        if ($this->shouldBeJson($content))
-        {
-            $this->headers->set('Content-Type', 'application/json');
-
-            $content = $this->morphToJson($content);
-        }
-
-        // If this content implements the "RenderableInterface", then we will call the
-        // render method on the object so we will avoid any "__toString" exceptions
-        // that might be thrown and have their errors obscured by PHP's handling.
-        elseif ($content instanceof RenderableInterface)
-        {
-            $content = $content->render();
-        }
-
-        return parent::setContent($content);
     }
 
     /**
