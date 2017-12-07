@@ -70,9 +70,10 @@ class RequestContext
     }
 
     /**
+     * 是否不使用全局中间件,默认使用,
      * @return bool
      */
-    public function getPassMiddlewarePriority()
+    public function isPassMiddlewarePriority()
     {
         return $this->passMiddlewarePriority;
     }
