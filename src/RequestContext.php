@@ -26,8 +26,7 @@ class RequestContext
     private $httpsPort;
     private $queryString;
 
-    private $passMiddlewarePriority = false;
-    private $middlewares = array();
+
 
 
     /**
@@ -59,42 +58,7 @@ class RequestContext
         $this->setQueryString($queryString);
     }
 
-    /**
-     * @param bool $value
-     * @return $this
-     */
-    public function setPassMiddlewarePriority($value)
-    {
-        $this->passMiddlewarePriority = $value;
-        return $this;
-    }
 
-    /**
-     * 是否不使用全局中间件,默认使用,
-     * @return bool
-     */
-    public function isPassMiddlewarePriority()
-    {
-        return $this->passMiddlewarePriority;
-    }
-
-    /**
-     * @param  array $middlewares
-     * @return $this
-     */
-    public function setMiddlewares($middlewares)
-    {
-        $this->middlewares = $middlewares;
-        return $this;
-    }
-
-    /**
-     * @return array
-     */
-    public function getMiddlewares()
-    {
-        return $this->middlewares;
-    }
     /**
      * Updates the RequestContext information based on a HttpFoundation Request.
      *
