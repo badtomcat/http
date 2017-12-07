@@ -13,7 +13,7 @@
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Tobias Schultze <http://tobion.de>
  */
-namespace Tian\Http;
+namespace Badtomcat\Http;
 
 class RequestContext
 {

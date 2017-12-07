@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tian\Http;
+namespace Badtomcat\Http;
 
 /**
  * Response represents an HTTP response.
@@ -88,7 +88,7 @@ class Response
     public $original;
 
     /**
-     * @var \Tian\Http\ResponseHeaderBag
+     * @var \Badtomcat\Http\ResponseHeaderBag
      */
     public $headers;
 
@@ -1330,7 +1330,7 @@ class Response
      * @param  string  $key
      * @param  string  $value
      * @param  bool    $replace
-     * @return \Tian\Http\Response
+     * @return \Badtomcat\Http\Response
      */
     public function header($key, $value, $replace = true)
     {
@@ -1342,8 +1342,8 @@ class Response
     /**
      * Add a cookie to the response.
      *
-     * @param  \Tian\Http\Cookie  $cookie
-     * @return \Tian\Http\Response
+     * @param  \Badtomcat\Http\Cookie  $cookie
+     * @return \Badtomcat\Http\Response
      */
     public function withCookie(Cookie $cookie)
     {

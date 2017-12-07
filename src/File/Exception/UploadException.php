@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tian\Http\File\Exception;
+namespace Badtomcat\Http\File\Exception;
 
 /**
  * Thrown when an error occurred during file upload.

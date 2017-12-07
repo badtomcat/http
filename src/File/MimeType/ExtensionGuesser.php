@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tian\Http\File\MimeType;
+namespace Badtomcat\Http\File\MimeType;
 
 /**
  * A singleton mime type to file extension guesser.

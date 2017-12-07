@@ -1,6 +1,6 @@
 <?php
 
-namespace Tian\Http\Exception;
+namespace Badtomcat\Http\Exception;
 
 use Exception;
 

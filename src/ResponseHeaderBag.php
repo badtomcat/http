@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tian\Http;
+namespace Badtomcat\Http;
 
 /**
  * ResponseHeaderBag is a container for Response HTTP headers.

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tian\Http;
+namespace Badtomcat\Http;
 
 /**
  * StreamedResponse represents a streamed HTTP response.

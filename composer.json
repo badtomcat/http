@@ -1,14 +1,14 @@
 {
-    "name": "aweitian/http",
+    "name": "badtomcat/http",
     "type": "library",
-    "description": "Tian HttpFoundation Component",
+    "description": "Badtomcat HttpFoundation Component",
     "keywords": [],
-    "homepage": "https://github.com/aweitian/http",
+    "homepage": "https://github.com/badtomcat/http",
     "license": "MIT",
     "authors": [
         {
-            "name": "awei.tian",
-            "email": "awei.tian@qq.com"
+            "name": "badtomcat",
+            "email": "531164479@qq.com"
         }
     ],
     "require": {
@@ -18,7 +18,7 @@
 
     },
     "autoload": {
-        "psr-4": { "Tian\\Http\\": "src\\" },
+        "psr-4": { "Badtomcat\\Http\\": "src\\" },
         "exclude-from-classmap": [
             "/Tests/"
         ]

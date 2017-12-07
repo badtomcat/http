@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tian\Http;
+namespace Badtomcat\Http;
 
 /**
  * HeaderBag is a container for HTTP headers.

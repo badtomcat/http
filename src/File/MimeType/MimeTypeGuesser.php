@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Tian\Http\File\MimeType;
+namespace Badtomcat\Http\File\MimeType;
 
-use Tian\Http\File\Exception\FileNotFoundException;
-use Tian\Http\File\Exception\AccessDeniedException;
+use Badtomcat\Http\File\Exception\FileNotFoundException;
+use Badtomcat\Http\File\Exception\AccessDeniedException;
 
 /**
  * A singleton mime type guesser.

@@ -1,9 +1,9 @@
 <?php
 
-namespace Tian\Http\Exception;
+namespace Badtomcat\Http\Exception;
 
 use RuntimeException;
-use Tian\Http\Response;
+use Badtomcat\Http\Response;
 
 class HttpResponseException extends RuntimeException
 {

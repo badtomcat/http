@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Tian\Http;
+namespace Badtomcat\Http;
 
-use Tian\Http\File\UploadedFile;
+use Badtomcat\Http\File\UploadedFile;
 
 /**
  * FileBag is a container for uploaded files.

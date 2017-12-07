@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Tian\Http\File;
+namespace Badtomcat\Http\File;
 
-use Tian\Http\File\Exception\FileException;
-use Tian\Http\File\Exception\FileNotFoundException;
-use Tian\Http\File\MimeType\ExtensionGuesser;
+use Badtomcat\Http\File\Exception\FileException;
+use Badtomcat\Http\File\Exception\FileNotFoundException;
+use Badtomcat\Http\File\MimeType\ExtensionGuesser;
 
 /**
  * A file uploaded through a form.

@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Tian\Http;
+namespace Badtomcat\Http;
 
-use Tian\Http\Exception\ConflictingHeadersException;
-use Tian\Http\Exception\SuspiciousOperationException;
+use Badtomcat\Http\Exception\ConflictingHeadersException;
+use Badtomcat\Http\Exception\SuspiciousOperationException;
 
 /**
  * Request represents an HTTP request.
@@ -69,49 +69,49 @@ class Request
     /**
      * Custom parameters.
      *
-     * @var \Tian\Http\ParameterBag
+     * @var \Badtomcat\Http\ParameterBag
      */
     public $attributes;
 
     /**
      * Request body parameters ($_POST).
      *
-     * @var \Tian\Http\ParameterBag
+     * @var \Badtomcat\Http\ParameterBag
      */
     public $request;
 
     /**
      * Query string parameters ($_GET).
      *
-     * @var \Tian\Http\ParameterBag
+     * @var \Badtomcat\Http\ParameterBag
      */
     public $query;
 
     /**
      * Server and execution environment parameters ($_SERVER).
      *
-     * @var \Tian\Http\ServerBag
+     * @var \Badtomcat\Http\ServerBag
      */
     public $server;
 
     /**
      * Uploaded files ($_FILES).
      *
-     * @var \Tian\Http\FileBag
+     * @var \Badtomcat\Http\FileBag
      */
     public $files;
 
     /**
      * Cookies ($_COOKIE).
      *
-     * @var \Tian\Http\ParameterBag
+     * @var \Badtomcat\Http\ParameterBag
      */
     public $cookies;
 
     /**
      * Headers (taken from the $_SERVER).
      *
-     * @var \Tian\Http\HeaderBag
+     * @var \Badtomcat\Http\HeaderBag
      */
     public $headers;
 
@@ -1357,7 +1357,7 @@ class Request
     {
         if (!func_num_args() || func_get_arg(0)) {
             // setting $andCacheable to false should be deprecated in 4.1
-            throw new \BadMethodCallException('Checking only for cacheable HTTP methods with Tian\Http\Request::isMethodSafe() is not supported.');
+            throw new \BadMethodCallException('Checking only for cacheable HTTP methods with Badtomcat\Http\Request::isMethodSafe() is not supported.');
         }
 
         return in_array($this->getMethod(), array('GET', 'HEAD', 'OPTIONS', 'TRACE'));
@@ -1844,7 +1844,7 @@ class Request
             $request = call_user_func(self::$requestFactory, $query, $request, $attributes, $cookies, $files, $server, $content);
 
             if (!$request instanceof self) {
-                throw new \LogicException('The Request factory must return an instance of Tian\Http\Request.');
+                throw new \LogicException('The Request factory must return an instance of Badtomcat\Http\Request.');
             }
 
             return $request;

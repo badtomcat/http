@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tian\Http\Exception;
+namespace Badtomcat\Http\Exception;
 
 /**
  * The HTTP request contains headers with conflicting information.

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tian\Http\File;
+namespace Badtomcat\Http\File;
 
 /**
  * A PHP stream of unknown size.

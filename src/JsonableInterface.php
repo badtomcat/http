@@ -1,5 +1,5 @@
 <?php
-namespace Tian\Http;
+namespace Badtomcat\Http;
 
 interface JsonableInterface {
 

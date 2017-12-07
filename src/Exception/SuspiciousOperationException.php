@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tian\Http\Exception;
+namespace Badtomcat\Http\Exception;
 
 /**
  * Raised when a user has performed an operation that should be considered
