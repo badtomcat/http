@@ -26,6 +26,10 @@ class RequestContext
     private $httpsPort;
     private $queryString;
 
+    private $passMiddlewarePriority = false;
+    private $middlewares = array();
+
+
     /**
      * @var array
      */
@@ -55,6 +59,41 @@ class RequestContext
         $this->setQueryString($queryString);
     }
 
+    /**
+     * @param bool $value
+     * @return $this
+     */
+    public function setPassMiddlewarePriority($value)
+    {
+        $this->passMiddlewarePriority = $value;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getPassMiddlewarePriority()
+    {
+        return $this->passMiddlewarePriority;
+    }
+
+    /**
+     * @param  array $middlewares
+     * @return $this
+     */
+    public function setMiddlewares($middlewares)
+    {
+        $this->middlewares = $middlewares;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getMiddlewares()
+    {
+        return $this->middlewares;
+    }
     /**
      * Updates the RequestContext information based on a HttpFoundation Request.
      *
